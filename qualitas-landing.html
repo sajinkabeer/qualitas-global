@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualitas - Advanced Pipe Coating Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1a1a1a;
+        }
+
+        .cta-btn {
+            background: #1a1a1a;
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26,26,26,0.03) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #1a1a1a;
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #4a4a4a;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            padding: 1rem 2.5rem;
+            border: 2px solid #1a1a1a;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+        }
+
+        .visual-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #f9fafb;
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 1px solid #e5e5e5;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: #1a1a1a;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 6rem 2rem;
+            background: #f5f7fa;
+        }
+
+        .tech-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .tech-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tech-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .tech-features {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .tech-feature {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: #1a1a1a;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .feature-text p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: #1a1a1a;
+            padding: 1.2rem 3rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            color: #b0b0b0;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container,
+            .tech-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">QUALITAS</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-btn">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tag">ADVANCED COATING SOLUTIONS</div>
+                <h1>Engineering Excellence in Pipe Protection</h1>
+                <p class="hero-subtitle">Delivering cutting-edge coating technologies for the oil & gas industry across the Middle East. Precision, durability, innovation.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Request Consultation</a>
+                    <a href="#services" class="btn-secondary">Our Solutions</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-placeholder">Industrial Pipeline Visual</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h3>99.8%</h3>
+                <p>Quality Rating</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Technical Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <div class="section-tag">Our Expertise</div>
+            <h2 class="section-title">Comprehensive Coating Solutions</h2>
+            <p class="section-subtitle">From standard applications to specialized high-performance coatings, we deliver precision protection for critical infrastructure.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">3L</div>
+                <h3>3-Layer PE Coating</h3>
+                <p>Advanced three-layer polyethylene coating system providing superior corrosion protection for buried and submerged pipelines in harsh environments.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">FBE</div>
+                <h3>Fusion Bonded Epoxy</h3>
+                <p>High-performance epoxy powder coating applied through electrostatic spray, offering exceptional adhesion and chemical resistance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">PP</div>
+                <h3>Polypropylene Systems</h3>
+                <p>Thermoplastic coating solutions designed for extreme temperature applications with outstanding impact resistance and flexibility.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">IC</div>
+                <h3>Internal Coatings</h3>
+                <p>Specialized flow efficiency coatings reducing friction and preventing scale buildup in oil and gas transmission pipelines.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">AC</div>
+                <h3>Anti-Corrosion</h3>
+                <p>Comprehensive corrosion protection systems engineered for Saudi Arabia's unique environmental challenges and climate conditions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">QC</div>
+                <h3>Quality Assurance</h3>
+                <p>ISO-certified testing and inspection protocols ensuring every coating meets international standards and client specifications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="technology" id="technology">
+        <div class="tech-container">
+            <div class="visual-placeholder">Advanced Equipment Visual</div>
+            <div class="tech-content">
+                <h2>Technology That Sets Standards</h2>
+                <p>We leverage state-of-the-art coating application systems and rigorous quality control processes to deliver unmatched protection for your critical infrastructure.</p>
+                <div class="tech-features">
+                    <div class="tech-feature">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">
+                            <h4>Automated Application Systems</h4>
+                            <p>Precision-controlled coating equipment ensuring consistent thickness and quality across every project.</p>
+                        </div>
+                    </div>
+                    <div class="tech-feature">
+                        <div class="feature-icon">🔬</div>
+                        <div class="feature-text">
+                            <h4>Advanced Testing Laboratory</h4>
+                            <p>In-house lab with cutting-edge diagnostic tools for real-time quality verification and performance analysis.</p>
+                        </div>
+                    </div>
+                    <div class="tech-feature">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">
+                            <h4>Digital Quality Tracking</h4>
+                            <p>Complete traceability and documentation for every coating batch, meeting international compliance standards.</p>
+                        </div>
+                    </div>
+                    <div class="tech-feature">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-text">
+                            <h4>Environmental Resilience</h4>
+                            <p>Formulations specifically engineered for Middle East conditions—extreme heat, sandstorms, and coastal corrosion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2>Ready to Protect Your Infrastructure?</h2>
+            <p>Partner with Saudi Arabia's leading pipe coating specialists. Let's discuss your project requirements.</p>
+            <a href="mailto:info@qualitas.sa" class="btn-white">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>QUALITAS</h3>
+                <p>Leading provider of advanced industrial pipe coating solutions across Saudi Arabia and the Middle East. Engineering protection, delivering excellence.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">3-Layer PE</a></li>
+                    <li><a href="#services">FBE Coating</a></li>
+                    <li><a href="#services">Internal Coating</a></li>
+                    <li><a href="#services">Quality Testing</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@qualitas.sa">info@qualitas.sa</a></li>
+                    <li><a href="tel:+966">+966 XX XXX XXXX</a></li>
+                    <li><a href="#">Riyadh, Saudi Arabia</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Qualitas Coating Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
